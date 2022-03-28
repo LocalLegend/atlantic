@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Release.Name }}-ingress-route
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`{{ .Values.host }}`)
+    kind: Rule
+    services:
+    - name: {{ .Release.Name }}
+      port: 3000
+  tls:
+    certResolver: letsencrypt

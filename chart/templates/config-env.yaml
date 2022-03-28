@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: special-{{ .Release.Name }}-config
+data:
+  RAILS_ENV: {{ .Values.RAILS_ENV }}
+  RAILS_MASTER_KEY: {{ .Values.RAILS_MASTER_KEY }}
+
+  AWS_ACCESS_KEY: {{ .Values.AWS_ACCESS_KEY }}
+  AWS_SECRET_KEY: {{ .Values.AWS_SECRET_KEY }}
+  AWS_REGION: {{ .Values.AWS_REGION }}
+
+  DYNANODB_TABLE_NAME_RUNNERS: {{ .Values.DYNANODB_TABLE_NAME_RUNNERS }}
+  MONGODB_USERNAME: {{ .Values.MONGODB_USERNAME }}
+  MONGODB_PASSWORD: {{ .Values.MONGODB_PASSWORD }}
+  POSTGRES_DB: {{ .Values.POSTGRES_DB }}
+  POSTGRES_USER: {{ .Values.POSTGRES_USER }}
+  POSTGRES_PASSWORD: {{ .Values.POSTGRES_PASSWORD }}
+  KEYCLOAK_USER: {{ .Values.KEYCLOAK_USER }}
+  KEYCLOAK_PASSWORD: {{ .Values.KEYCLOAK_PASSWORD }}

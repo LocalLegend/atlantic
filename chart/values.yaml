@@ -1,0 +1,11 @@
+app: atlantic
+host: locallegend.ru
+
+RAILS_ENV: development
+NODE_ENV: development
+
+image:
+  repository: ghcr.io/onedal/locallegend-atlantic
+  tag: latest
+
+
